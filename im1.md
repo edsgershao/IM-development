@@ -8,6 +8,7 @@
 ![](img/send_message_ack.png)
 
 加入应答机制后，可以确定消息成功接收的情形，client A发送消息给服务器且收到了服务器回复的ack。但对于消息丢失的情形怎么处理呢？借鉴TCP的超时重传机制，如果client A在一定时间内没有收到IM服务器回复的ack，则超时重传。对应流程如下：
+
 ![](img/resend_message1.png)
 
 ![](img/resend_message2.png)
