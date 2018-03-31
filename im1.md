@@ -6,6 +6,7 @@
 如何确认消息有没有丢失，消息丢失发生在哪一个环节呢？可以通过应答机制来解决。client A发送消息给IM服务器，IM服务器收到消息后回复一个ack给client A, client A收到服务器发送的ack，client A就可以确定服务器收到了自己 发送的消息。如果没有收到服务器发送的ack，则不能确定服务器有没有收到自己发送的消息。这里存在两种可能，一种是client A发给服务器的时候，服务器没有收到消息；第二种是服务器收到消息了，发送ack给client A的后，client A没有收到ack。同理，服务器和Client B也是同样的流程，只是发送方成了IM 服务器，接收方成了client B。
 
 ![](img/send_message_ack.png)
+
 加入应答机制后，可以确定消息成功接收的情形，client A发送消息给服务器且收到了服务器回复的ack。但对于消息丢失的情形怎么处理呢？借鉴TCP的超时重传机制，如果client A在一定时间内没有收到IM服务器回复的ack，则超时重传。对应流程如下：
 ![](img/resend_message1.png)
 
