@@ -10,6 +10,6 @@
 7.  高可用
 8.  长短链接在IM中的使用
 9.  文件传输
-![](img/im_problems.png = 50x50)
+![](img/im_problems.png)
 
 
